@@ -32,8 +32,14 @@ def send_message(encoded_message):
     sys.stdout.write(encoded_message['content'])
     sys.stdout.flush()
 
-
 while True:
     message = get_message()
-    if message == "ping":
-        send_message(encode_message("pong"))
+    path = '/tmp/bookmarks.json'
+    try:
+        with open(path, 'w') as f:
+            json.dump(json.loads(message), f)
+        send_message(encode_message("Saved bookmarks to {}".format(path)))
+
+    except Exception as e:
+        send_message(encode_message(str(e)))
+    

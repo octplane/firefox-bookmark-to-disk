@@ -72,6 +72,9 @@ function logItems(bookmarkItem, indent) {
 
 var port = browser.runtime.connectNative(extensionName);
 
+port.onMessage.addListener((response) => {
+    console.log("Received: " + response);
+});
 function logTree(bookmarkItems) {
     let content = logItems(bookmarkItems[0], 0);
     let sContent = JSON.stringify(content, null, 2);
