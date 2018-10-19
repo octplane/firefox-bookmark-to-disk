@@ -54,11 +54,7 @@ refreshBookmarkList();
 
 function logItems(bookmarkItem, indent) {
     if (bookmarkItem.url && bookmarkItem.url.startsWith('http')) {
-        var out = {
-            uid: bookmarkItem.id,
-            title: bookmarkItem.title,
-            arg: bookmarkItem.url
-        };
+        let out = bookmarkItem;
         return [out];
     }
     var o = [];
