@@ -1,0 +1,28 @@
+{
+    "manifest_version": 2,
+    "name": "Sync bookmark to disk",
+    "version": "1.0",
+    "description": "Sync bookmark to disk",
+    "icons": {
+        "48": "icons/bookmark-it.png",
+        "96": "icons/bookmark-it@2x.png"
+    },
+
+    "permissions": [
+        "bookmarks",
+        "tabs",
+        "nativeMessaging"
+    ],
+
+    "applications": {
+        "gecko": {
+            "id": "bookmark_to_disk@zoy.org",
+            "strict_min_version": "50.0"
+        }
+    },
+
+    "background": {
+        "scripts": ["background.js"]
+    }
+
+}

@@ -1,0 +1,7 @@
+{
+  "name": "bookmark_to_disk",
+  "description": "Example host for native messaging",
+  "path": "/Users/pierrebaillet/src/mine/alfred_firefox_synchroniser/dump_script/dump.py",
+  "type": "stdio",
+  "allowed_extensions": [ "bookmark_to_disk@zoy.org" ]
+}
