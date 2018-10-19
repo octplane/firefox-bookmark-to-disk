@@ -37,7 +37,7 @@ while True:
     path = '/tmp/bookmarks.json'
     try:
         with open(path, 'w') as f:
-            json.dump(json.loads(message), f)
+            json.dump({'items': json.loads(message)}, f)
         send_message(encode_message("Saved bookmarks to {}".format(path)))
 
     except Exception as e:
