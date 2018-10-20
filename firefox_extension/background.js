@@ -1,43 +1,5 @@
-var currentTab;
-var currentBookmark;
 let extensionName = "bookmark_to_disk";
 
-/*
- * Updates the browserAction icon to reflect whether the current page
- * is already bookmarked.
- */
-function updateIcon() {
-  browser.browserAction.setIcon({
-    path: currentBookmark ? {
-      19: "icons/star-filled-19.png",
-      38: "icons/star-filled-38.png"
-    } : {
-      19: "icons/star-empty-19.png",
-      38: "icons/star-empty-38.png"
-    },
-    tabId: currentTab.id
-  });
-  browser.browserAction.setTitle({
-    // Screen readers can see the title
-    title: currentBookmark ? 'Unbookmark it!' : 'Bookmark it!',
-    tabId: currentTab.id
-  }); 
-}
-
-/*
- * Add or remove the bookmark on the current page.
- */
-function toggleBookmark() {
-  if (currentBookmark) {
-    browser.bookmarks.remove(currentBookmark.id);
-  } else {
-    browser.bookmarks.create({title: currentTab.title, url: currentTab.url});
-  }
-}
-
-/*
- * Switches currentTab and currentBookmark to reflect the currently active tab
- */
 function refreshBookmarkList() {
     var gettingTree = browser.bookmarks.getTree();
     gettingTree.then(logTree, onRejected);

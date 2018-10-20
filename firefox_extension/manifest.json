@@ -4,13 +4,12 @@
     "version": "1.0",
     "description": "Sync bookmark to disk",
     "icons": {
-        "48": "icons/bookmark-it.png",
-        "96": "icons/bookmark-it@2x.png"
+        "48": "icons/icon.png",
+        "96": "icons/icon@2x.png"
     },
 
     "permissions": [
         "bookmarks",
-        "tabs",
         "nativeMessaging"
     ],
 
