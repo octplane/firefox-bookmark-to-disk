@@ -1,7 +1,7 @@
 {
     "manifest_version": 2,
     "name": "Sync bookmark to disk",
-    "version": "1.0",
+    "version": "1.1",
     "description": "Sync bookmark to disk",
     "icons": {
         "48": "icons/icon.png",

@@ -15,7 +15,8 @@ browser.bookmarks.onRemoved.addListener(refreshBookmarkList);
 refreshBookmarkList();
 
 function logItems(bookmarkItem, indent) {
-    if (bookmarkItem.url && bookmarkItem.url.startsWith('http')) {
+    if (bookmarkItem.url && 
+      (bookmarkItem.url.startsWith('http') || bookmarkItem.url.startsWith('file'))) {
         let out = bookmarkItem;
         return [out];
     }
