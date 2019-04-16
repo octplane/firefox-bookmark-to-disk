@@ -5,10 +5,10 @@ function refreshBookmarkList() {
     gettingTree.then(logTree, onRejected);
 }
 
-// listen for bookmarks being created
 browser.bookmarks.onCreated.addListener(refreshBookmarkList);
-
-// listen for bookmarks being removed
+browser.bookmarks.onRemoved.addListener(refreshBookmarkList);
+browser.bookmarks.onChanged.addListener(refreshBookmarkList);
+browser.bookmarks.onMoved.addListener(refreshBookmarkList);
 browser.bookmarks.onRemoved.addListener(refreshBookmarkList);
 
 // update when the extension loads initially
